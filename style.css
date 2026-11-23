@@ -1,0 +1,269 @@
+
+:root {
+    --bg: #f5f7fb;
+    --card: #fff;
+    --ink: #182230;
+    --muted: #667085;
+    --line: #e7ebf1;
+    --accent: #2563eb;
+    --green: #16845b;
+    --red: #c0392b;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.5 system-ui, sans-serif;
+  }
+  
+  .wrap {
+    max-width: 1080px;
+    margin: 36px auto;
+    padding: 0 20px;
+  }
+  
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  
+  .top h1 {
+    margin: 4px 0;
+    font-size: 30px;
+  }
+  
+  .sub, .stat-label, .stat-note {
+    color: var(--muted);
+  }
+  
+  .pill {
+    background: #e9f8f1;
+    color: var(--green);
+    padding: 7px 11px;
+    border-radius: 999px;
+    font-size: 12px;
+  }
+  
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  
+  .stat, .panel {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px #18223008;
+  }
+  
+  .stat {
+    padding: 18px;
+  }
+  
+  .stat-value {
+    font-size: 25px;
+    font-weight: 750;
+    margin-top: 7px;
+  }
+  
+  .stat-note {
+    font-size: 12px;
+  }
+  
+  .main {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  
+  .panel {
+    padding: 20px;
+  }
+  
+  .panel h2 {
+    font-size: 17px;
+    margin: 0 0 16px;
+  }
+  
+  .field {
+    margin-bottom: 13px;
+  }
+  
+  .field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 650;
+    margin-bottom: 6px;
+  }
+  
+  .field input {
+    width: 100%;
+    border: 1px solid #d8dee8;
+    border-radius: 9px;
+    padding: 11px 12px;
+    font: inherit;
+    background: white;
+  }
+  
+  .field input:focus {
+    border-color: var(--accent);
+    outline: none;
+  }
+  
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .hint {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  
+  .btn {
+    border: 0;
+    border-radius: 9px;
+    padding: 11px 15px;
+    font: inherit;
+    cursor: pointer;
+  }
+  
+  .primary {
+    background: var(--accent);
+    color: white;
+    width: 100%;
+  }
+  
+  .secondary {
+    background: #f0f3f8;
+    color: #344054;
+  }
+  
+  .danger {
+    color: var(--red);
+    background: #fff1ef;
+  }
+  
+  .list-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  
+  .list-head h2 {
+    margin: 0;
+  }
+  
+  .filter {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 8px;
+    background: white;
+  }
+  
+  .table-wrap {
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 12px 9px;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  th {
+    font-size: 11px;
+    color: var(--muted);
+  }
+  
+  td {
+    font-size: 13px;
+  }
+  
+  .amount {
+    font-weight: 750;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 7px;
+  }
+  
+  .actions button {
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+  
+  .empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 34px 10px;
+  }
+  
+  .empty strong {
+    display: block;
+    color: var(--ink);
+  }
+  
+  .footer {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  .toast {
+    position: fixed;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #182230;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 9px;
+    opacity: 0;
+    transition: .2s;
+  }
+  
+  .toast.show {
+    opacity: 1;
+  }
+  
+  @media (max-width: 780px) {
+    .main, .stats {
+      grid-template-columns: 1fr;
+    }
+  
+    .top {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+  

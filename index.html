@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fuel Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div>
+      <div class="eyebrow">Personal finance</div>
+      <h1>Fuel Expense Tracker</h1>
+      <p class="sub">Track every fuel expense.</p>
+    </div>
+    <span class="pill">● Saved on this device</span>
+  </header>
+
+  <section class="stats">
+    <div class="stat">
+      <div class="stat-label">Total fuel spend</div>
+      <div class="stat-value" id="totalSpend">₹0</div>
+      <div class="stat-note">All transactions</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Total fuel purchased</div>
+      <div class="stat-value" id="totalLitres">0 L</div>
+      <div class="stat-note">Combined quantity</div>
+    </div>
+    <div class="stat">
+      <div class="stat-label">Average price per litre</div>
+      <div class="stat-value" id="avgPrice">₹0.00</div>
+      <div class="stat-note">Weighted average</div>
+    </div>
+  </section>
+
+  <main class="main">
+    <section class="panel">
+      <h2 id="formTitle">Add fuel entry</h2>
+
+      <form id="fuelForm">
+        <input type="hidden" id="editId">
+
+        <div class="field">
+          <label for="date">Date</label>
+          <input id="date" type="date" required>
+        </div>
+
+        <div class="grid2">
+          <div class="field">
+            <label for="amount">Amount (₹)</label>
+            <input id="amount" type="number"
+              min="0.01" step="0.01"
+              placeholder="1500" required>
+          </div>
+
+          <div class="field">
+            <label for="litres">Fuel (litres)</label>
+            <input id="litres" type="number"
+              min="0.01" step="0.01"
+              placeholder="12.5" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="price">Price per litre (₹)</label>
+          <input id="price" type="text" value="—" readonly>
+        </div>
+
+        <p class="hint">
+          Price per litre is calculated automatically.
+        </p>
+
+        <button class="btn primary" id="submitBtn" type="submit">
+          Save entry
+        </button>
+
+        <button class="btn secondary" id="cancelEdit"
+          type="button" style="display:none;width:100%;margin-top:8px">
+          Cancel edit
+        </button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="list-head">
+        <h2>Fuel history</h2>
+        <select class="filter" id="monthFilter">
+          <option value="all">All months</option>
+        </select>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Litres</th>
+              <th>₹ / litre</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="entries"></tbody>
+        </table>
+
+        <div class="empty" id="empty">
+          <strong>No fuel entries yet</strong>
+          Add your first fill-up.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <p class="footer">
+    Entries are stored locally in your browser.
+  </p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
