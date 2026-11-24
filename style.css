@@ -266,4 +266,42 @@
       flex-direction: column;
     }
   }
+
+  .budget-panel {
+  margin-bottom: 18px;
+}
+
+.budget-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.progress-track {
+  height: 12px;
+  background: #e7ebf1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--green);
+  transition: width 0.3s ease;
+}
+
+.progress-bar.over-budget {
+  background: var(--red);
+}
+
+#budgetAlert {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+#reportOutput {
+  margin-top: 12px;
+}
   

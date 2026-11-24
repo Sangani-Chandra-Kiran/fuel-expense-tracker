@@ -36,6 +36,70 @@
     </div>
   </section>
 
+<section class="stats-grid">
+  <div class="stat-card">
+    <p>Total transactions</p>
+    <h2 id="totalTransactions">0</h2>
+  </div>
+
+  <div class="stat-card">
+    <p>Average fill-up amount</p>
+    <h2 id="averageFillAmount">₹0.00</h2>
+  </div>
+
+  <div class="stat-card">
+    <p>Highest price per litre</p>
+    <h2 id="highestPrice">₹0.00</h2>
+  </div>
+
+  <div class="stat-card">
+    <p>Lowest price per litre</p>
+    <h2 id="lowestPrice">₹0.00</h2>
+  </div>
+</section>
+
+
+  <section class="panel budget-panel">
+  <h2>Monthly fuel budget</h2>
+
+  <form id="budgetForm">
+    <div class="grid2">
+      <div class="field">
+        <label for="budgetMonth">Month</label>
+        <input id="budgetMonth" type="month" required>
+      </div>
+
+      <div class="field">
+        <label for="budgetAmount">Budget (₹)</label>
+        <input id="budgetAmount" type="number"
+          min="0.01" step="0.01" required>
+      </div>
+    </div>
+
+    <button class="btn primary" type="submit">
+      Save budget
+    </button>
+  </form>
+
+  <div class="budget-details">
+    <p>Spent: <strong id="budgetSpent">₹0</strong></p>
+    <p>Remaining: <strong id="budgetRemaining">₹0</strong></p>
+    <p id="budgetPercentage">0% used</p>
+  </div>
+
+  <div class="progress-track">
+    <div id="budgetProgress" class="progress-bar"></div>
+  </div>
+
+  <p id="budgetAlert" class="hint"></p>
+
+  <button id="reportBtn" class="btn secondary" type="button">
+    Generate monthly report
+  </button>
+
+  <p id="reportOutput" class="hint"></p>
+</section>
+
   <main class="main">
     <section class="panel">
       <h2 id="formTitle">Add fuel entry</h2>
@@ -87,6 +151,24 @@
     <section class="panel">
       <div class="list-head">
         <h2>Fuel history</h2>
+        <button id="exportBtn" class="btn secondary" type="button">
+          Export CSV
+        </button>
+        <button id="backupBtn" class="btn secondary" type="button">
+          Download Backup
+        </button>
+
+        <button id="restoreBtn" class="btn secondary" type="button">
+          Restore Backup
+        </button>
+
+        <input
+          id="restoreFile"
+          type="file"
+          accept=".json,application/json"
+          hidden
+        />         
+
         <select class="filter" id="monthFilter">
           <option value="all">All months</option>
         </select>
@@ -121,6 +203,5 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="script.js"></script>
-</body>
+<script type="module" src="src/app.js"></script></body>
 </html>

@@ -1,0 +1,11 @@
+
+{
+  "name": "fuel-expense-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "description": "A modular fuel expense tracking application"
+}
